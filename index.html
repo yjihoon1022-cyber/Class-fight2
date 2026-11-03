@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>우리 반 파이트!</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="wrap">
+  <header><div class="eyebrow">CLASS BATTLE ARENA</div><h1>🥊 우리 반 파이트!</h1><p>주사위를 굴리고, 연타해서 승리하자!</p></header>
+  <section id="lobby" class="panel">
+    <h2>게임 입장</h2>
+    <label>닉네임<input id="name" maxlength="14" placeholder="예: 파이터민수"></label>
+    <div class="actions"><button id="create" class="primary">새 방 만들기</button></div>
+    <div class="joinrow"><input id="roomCode" maxlength="4" placeholder="방 코드 4자리"><button id="join">방 참가</button></div>
+    <p class="hint">친구 한 명은 새 방을 만들고, 다른 친구는 방 코드를 입력해 참가하세요.</p>
+  </section>
+  <section id="game" class="hidden">
+    <div class="roomline panel"><span>방 코드 <b id="code">----</b></span><button id="copy">코드 복사</button></div>
+    <div id="waiting" class="panel">상대 플레이어를 기다리는 중...</div>
+    <div id="arena" class="fighters">
+      <article class="fighter panel" id="meCard"><div class="tag">나</div><div class="avatar">🦸</div><h2 id="myName">나</h2><div class="hp"><div id="myBar"></div></div><strong id="myHp">100 HP</strong><p>주사위: <b id="myRoll">1</b></p></article>
+      <div class="vs">VS</div>
+      <article class="fighter panel" id="opCard"><div class="tag enemy">상대</div><div class="avatar">🥷</div><h2 id="opName">상대</h2><div class="hp"><div id="opBar"></div></div><strong id="opHp">100 HP</strong><p>주사위: <b id="opRoll">1</b></p></article>
+    </div>
+    <div class="controls panel">
+      <button id="roll" class="secondary">🎲 숫자 굴리기</button>
+      <button id="attack" class="attack">👊 연타 공격!</button>
+      <p class="hint">주사위 숫자만큼 한 번 공격할 때마다 데미지를 줘요.</p>
+    </div>
+    <div class="panel"><h3>📜 전투 기록</h3><ul id="log"></ul></div>
+    <details class="panel admin"><summary>🔐 관리자 메뉴</summary>
+      <div class="joinrow"><input id="adminPass" type="password" placeholder="#password 입력"><button id="adminLogin">관리자 로그인</button></div>
+      <div id="adminTools" class="hidden actions"><button id="reset">경기 초기화</button><button id="heal">모두 체력 회복</button></div>
+    </details>
+    <button id="leave" class="leave">방 나가기</button>
+  </section>
+  <p id="status" class="status"></p>
+  <footer>친구와 즐겁게 플레이하고 서로 존중해 주세요 ✨</footer>
+</main>
+<script src="app.js"></script>
+</body></html>
